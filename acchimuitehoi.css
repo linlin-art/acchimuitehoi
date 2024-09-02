@@ -1,0 +1,180 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+#startScreen, #game {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+    width: 80%;
+    max-width: 800px;
+}
+
+#startScreen h1, #game h1 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+#startScreen p, #game p {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+#startScreen button, #game button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 1.3em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: dodgerblue;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#startScreen button:hover, #game button:hover {
+    background-color: royalblue;
+}
+
+#startScreen button:active, #game button:active {
+    background-color: darkblue;
+}
+
+#game button.game-over {
+    background-color: gray;
+}
+
+#game button.restart-button {
+    background-color: dodgerblue;
+}
+
+#game button.restart-button:hover {
+    background-color: royalblue;
+}
+
+#result {
+    margin-top: 0px;
+    font-size: 1.3em;
+    margin-bottom: 0px;
+}
+
+.direction-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 220px;
+    margin: 5px auto;
+    position: relative;
+}
+
+.dir-btn {
+    position: absolute;
+    width: 68px;
+    height: 66px;
+    font-weight: bold;
+    font-size: 1.5em !important;
+    text-align: left;
+    text-indent: -7.5px;
+}
+
+#up {
+    top: 0;
+    left: 46%;
+    transform: translateX(-50%);
+}
+
+#down {
+    bottom: 0;
+    left: 46%;
+    transform: translateX(-50%);
+}
+
+#left {
+    top: 46%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+#right {
+    top: 46%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.large-text {
+    font-size: 1.8em !important; 
+    font-weight: bold;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+/* 星のアニメーション */
+@keyframes starAnimation {
+    0% { transform: translateY(-1000px); opacity: 0; }
+    100% { transform: translateY(100vh); opacity: 1; }
+}
+
+.star {
+    position: absolute;
+    width: 60px;
+    height: 60px; 
+    background: yellow;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: starAnimation 3s linear infinite;
+}
+
+#winFinalMessage {
+    position: relative;
+    overflow: hidden;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#winFinalMessage .star {
+    top: 0;
+    left: 50%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.tie-background {
+    background-color: yellow;
+}
+.win-background {
+    background-color: blue;
+}
+
+.lose-background {
+    background-color: purple;
+}
+
+#score {
+    margin-top: -10px;
+    margin-bottom: -20px;
+    font-size: 1.0em;
+    color: navy;
+}
+
+.jankenpon {
+    font-size: 1.8em !important; 
+    font-weight: bold;
+}
+
+.acchi-muite-hoi {
+    font-size: 1.3em !important; 
+    font-weight: bold;
+}
+

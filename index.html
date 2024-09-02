@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>15パズルゲーム</title>
-    <link rel="stylesheet" href="15puzzle.css">
+    <link rel="stylesheet" href="acchimuitehoi.css">
+    <script type="text/javascript" src="acchimuitehoi.js" defer></script>
+    <title>あっち向いてホイゲーム</title>
 </head>
 <body>
-    <div class="container">
-        <div id="startMessage" class="message">
-            <strong>15パズルゲーム</strong><br>
-            難易度レベルを選んで<br>
-            スタートをクリックすると<br>
-            ゲームが始まります。<br>
-            ※ゲームの途中でも難易度変更とリスタートができます。
-        </div>
-        <table id="table"></table>
-        <div class="shuffle-container">
-            <div class="shuffle-options">
-                <input type="radio" id="level1" name="level" value="1" checked>
-                <label for="level1">レベル1</label>
-                <input type="radio" id="level2" name="level" value="2">
-                <label for="level2">レベル2</label>
-                <input type="radio" id="level3" name="level" value="3">
-                <label for="level3">レベル3</label>
-            </div>
-            <button id="startButton" class="start-button">スタート</button>
-        </div>
-        <div id="message" class="message hidden">
-            Success!<br>Congratulations!
-        </div>
+    <div id="startScreen">
+        <h1>あっち向いてホイゲーム</h1>
+        <p>3回勝つか3回負けるとゲームオーバーです。</p>
+        <button onclick="startGame()">スタート！</button>
     </div>
-    <script src="15puzzle.js"></script>
+    <div id="game" style="display:none;">
+        <h1>あっち向いてホイゲーム</h1>
+        <p class="bold-text jankenpon">じゃんけんぽん！</p>
+        
+        <div class="janken-buttons" id="jankenButtons">
+            <button onclick="janken('グー')">グー</button>
+            <button onclick="janken('チョキ')">チョキ</button>
+            <button onclick="janken('パー')">パー</button>
+        </div>
+        <div id="result"></div>
+        <div class="direction-buttons" id="directionButtons" style="display:none;">
+            <button class="dir-btn" id="up" onclick="playGame('上')">上</button>
+            <button class="dir-btn" id="left" onclick="playGame('左')">左</button>
+            <button class="dir-btn" id="right" onclick="playGame('右')">右</button>
+            <button class="dir-btn" id="down" onclick="playGame('下')">下</button>
+        </div>
+        <div id="score" style="display:none;">
+            <p><span id="winCount">0</span>勝<span id="loseCount">0</span>敗</p>
+        </div>
+        <button id="restartButton" style="display:none;" onclick="restartGame()">もう一度遊ぶ</button>
+    </div>
 </body>
 </html>
