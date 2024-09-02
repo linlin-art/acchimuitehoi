@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15パズルゲーム</title>
+    <link rel="stylesheet" href="15puzzle.css">
+</head>
+<body>
+    <div class="container">
+        <div id="startMessage" class="message">
+            <strong>15パズルゲーム</strong><br>
+            難易度レベルを選んで<br>
+            スタートをクリックすると<br>
+            ゲームが始まります。<br>
+            ※ゲームの途中でも難易度変更とリスタートができます。
+        </div>
+        <table id="table"></table>
+        <div class="shuffle-container">
+            <div class="shuffle-options">
+                <input type="radio" id="level1" name="level" value="1" checked>
+                <label for="level1">レベル1</label>
+                <input type="radio" id="level2" name="level" value="2">
+                <label for="level2">レベル2</label>
+                <input type="radio" id="level3" name="level" value="3">
+                <label for="level3">レベル3</label>
+            </div>
+            <button id="startButton" class="start-button">スタート</button>
+        </div>
+        <div id="message" class="message hidden">
+            Success!<br>Congratulations!
+        </div>
+    </div>
+    <script src="15puzzle.js"></script>
+</body>
+</html>

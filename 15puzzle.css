@@ -1,0 +1,158 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fdfdfd;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.message {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    font-size: 1.5em;
+    color: #388e3c;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border: 2px solid #388e3c;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 100;
+}
+
+.hidden {
+    display: none;
+}
+
+.tile {
+    width: 90px;
+    height: 90px;
+    border: 1px solid #a3a3a3;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 45px;
+    background-color: #e0f7fa;
+    color: #000000;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4), inset 1px 1px 2px rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tile:hover {
+    cursor: pointer;
+    background-color: #b2ebf2;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.tile:active {
+    background-color: #80deea;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.5), 2px 2px 4px rgba(255, 255, 255, 0.5);
+    transform: translateY(2px);
+}
+
+.tile.empty {
+    background-color: #f0f0f0;
+}
+
+.tile.correct {
+    background-color: #a5d6a7;
+}
+
+.start-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    background-color: #a0e8d8;
+    border: 1px solid #a3a3a3;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4), inset 1px 1px 2px rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.start-button:hover {
+    background-color: #88d4c5;
+}
+
+.start-button:active {
+    background-color: #70c0b2;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.5), 2px 2px 4px rgba(255, 255, 255, 0.5);
+    transform: translateY(2px);
+}
+
+@media (max-width: 600px) {
+    .tile {
+        width: 70px;
+        height: 70px;
+        font-size: 35px;
+    }
+}
+
+#message {
+    font-size: 2em;
+}
+
+.shuffle-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.shuffle-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.shuffle-options input[type="radio"] {
+    display: none;
+}
+
+.shuffle-options label {
+    padding: 8px 12px;
+    font-size: 1.5em;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #e0f7fa;
+    border: 1px solid #a3a3a3;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), inset 1px 1px 2px rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    width: 95px;
+    height: 38px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shuffle-options input[type="radio"]:checked + label {
+    background-color: #b2ebf2;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2), inset 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.shuffle-options label:hover {
+    background-color: #b2ebf2;
+}
+
+.shuffle-options label:active {
+    background-color: #80deea;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), 1px 1px 2px rgba(255, 255, 255, 0.5);
+    transform: translateY(1px);
+}
